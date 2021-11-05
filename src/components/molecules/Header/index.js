@@ -1,8 +1,7 @@
 import React, { Fragment, useState } from "react";
-import { Dialog, Popover, Tab, Transition } from "@headlessui/react";
+import { Dialog, Popover, Transition } from "@headlessui/react";
 import {
   MenuIcon,
-  SearchIcon,
   ShoppingBagIcon,
   XIcon,
 } from "@heroicons/react/outline";
@@ -32,9 +31,6 @@ const Header = () => {
 
   const navigation = roleType === "Admin" ? navAdmin : roleType === "Hosted" ? navHost : navUser
 
-  function classNames(...classes) {
-    return classes.filter(Boolean).join(" ");
-  }
   const [open, setOpen] = useState(false);
 
   return (
@@ -103,7 +99,7 @@ const Header = () => {
                 </div>
                 <div className="flow-root">
                   <a
-                    href="#"
+                    href="/register"
                     className="-m-2 p-2 block font-medium text-gray-900"
                   >
                     Create account
@@ -111,7 +107,7 @@ const Header = () => {
                 </div>
               </div>
 
-              <div className="border-t border-gray-200 py-6 px-4">
+              {/* <div className="border-t border-gray-200 py-6 px-4">
                 <a href="#" className="-m-2 p-2 flex items-center">
                   <img
                     src="https://tailwindui.com/img/flags/flag-canada.svg"
@@ -123,7 +119,7 @@ const Header = () => {
                   </span>
                   <span className="sr-only">, change currency</span>
                 </a>
-              </div>
+              </div> */}
             </div>
           </Transition.Child>
         </Dialog>
@@ -151,7 +147,7 @@ const Header = () => {
 
               {/* Logo */}
               <div className="ml-4 flex lg:ml-0">
-                <a href="#">
+                <a href="/">
                   <span className="sr-only">Workflow</span>
                   <img
                     className="h-8 w-auto"
@@ -214,7 +210,7 @@ const Header = () => {
                 {roleType === 'User' ?
                   (
                     <div className="ml-4 flow-root lg:ml-6">
-                      <a href="#" className="group -m-2 p-2 flex items-center">
+                      <a href="/" className="group -m-2 p-2 flex items-center">
                         <ShoppingBagIcon
                           className="flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500"
                           aria-hidden="true"
@@ -236,12 +232,12 @@ const Header = () => {
                   </div>
                   <ul className="dropdown-menu absolute hidden text-white pt-1">
                     <li className="">
-                      <a className="rounded-t bg-indigo-600 hover:text-gray-700 py-2 px-4 block whitespace-no-wrap" href="#">
+                      <a className="rounded-t bg-indigo-600 hover:text-gray-700 py-2 px-4 block whitespace-no-wrap" href="/">
                         Profile
                       </a>
                     </li>
                     <li className="">
-                      <a className="bg-indigo-600 hover:text-gray-700 py-2 px-4 block whitespace-no-wrap" href="#">
+                      <a className="bg-indigo-600 hover:text-gray-700 py-2 px-4 block whitespace-no-wrap" href="/">
                         Payment
                       </a>
                     </li>

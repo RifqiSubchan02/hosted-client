@@ -6,13 +6,16 @@ import { url } from '../../../../config/api';
 const CardCity = () => {
   const [dataCities, setDataCities] = useState([]);
 
-  useEffect(async () => {
+  async function fetchDataCities() {
     try {
       const cities = await axios.get(`${url.api}/houses/city`);
       setDataCities(cities.data.data);
     } catch (error) {
       console.log(error);
     }
+  }
+  useEffect(() => {
+    fetchDataCities();
   }, []);
 
   return (
@@ -28,7 +31,7 @@ const CardCity = () => {
             return (
               <div key={city.house_city} className="w-full rounded-lg shadow-lg p-3 flex flex-row justify-center items-center">
                 <div className="mr-3">
-                  <img className="object-center object-cover rounded h-20 w-24" src={cityImage} alt="photo" />
+                  <img className="object-center object-cover rounded h-20 w-24" src={cityImage} alt="city..." />
                 </div>
                 <div className="text-start">
                   <p className="text-xl text-black font-bold mb-2">{city.house_city}</p>
