@@ -6,6 +6,9 @@ const Routes = () => {
   return (
     <BrowserRouter>
       <Switch>
+        <Route path="/register-hosted">
+          <Register />
+        </Route>
         <Route path="/register">
           <Register />
         </Route>
