@@ -27,7 +27,7 @@ const CardCity = () => {
           </h1>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {dataCities.map(city => {
+          {dataCities && dataCities.map(city => {
             return (
               <div key={city.house_city} className="w-full rounded-lg shadow-lg p-3 flex flex-row justify-center items-center">
                 <div className="mr-3">
@@ -42,7 +42,8 @@ const CardCity = () => {
           })}
         </div>
       </section>
-    </div>)
+    </div>
+  )
 }
 
 export default CardCity;

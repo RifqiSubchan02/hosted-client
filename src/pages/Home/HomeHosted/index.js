@@ -1,10 +1,9 @@
 import React from 'react'
+import { CardHouse } from '../../../components'
 
 const HomeHosted = () => {
   return (
-    <div>
-      <h1>Home Hosted</h1>
-    </div>
+    <CardHouse />
   )
 }
 

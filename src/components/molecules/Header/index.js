@@ -188,13 +188,6 @@ const Header = () => {
                     >
                       Create account
                     </a>
-                    <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
-                    <a
-                      href="/register-hosted"
-                      className="text-sm font-medium text-gray-700 hover:text-gray-800"
-                    >
-                      Become a Hosted
-                    </a>
                   </div>
                 )}
 
@@ -221,34 +214,41 @@ const Header = () => {
                         <span className="sr-only">items in cart, view bag</span>
                       </a>
                     </div>
-                  ) : ''
+                  ) : null
                 }
 
-                <span className="h-6 w-px mx-4 bg-gray-200" aria-hidden="true" />
-                <div className="dropdown cursor-pointer inline-block relative">
-                  <div className="text-sm font-medium text-gray-700 hover:text-gray-800 rounded inline-flex items-center">
-                    <span className="mr-1">Profile</span>
-                    <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /> </svg>
-                  </div>
-                  <ul className="dropdown-menu absolute hidden text-white pt-1">
-                    <li className="">
-                      <a className="rounded-t bg-indigo-600 hover:text-gray-700 py-2 px-4 block whitespace-no-wrap" href="/">
-                        Profile
-                      </a>
-                    </li>
-                    <li className="">
-                      <a className="bg-indigo-600 hover:text-gray-700 py-2 px-4 block whitespace-no-wrap" href="/">
-                        Payment
-                      </a>
-                    </li>
+                {
+                  roleType === null || "" ?
+                    null : (
+                      <div className="hidden lg:block">
+                        <span className="h-6 w-px mx-4 bg-gray-200" aria-hidden="true" />
+                        <div className="dropdown cursor-pointer inline-block relative">
+                          <div className="text-sm font-medium text-gray-700 hover:text-gray-800 rounded inline-flex items-center">
+                            <span className="mr-1">Profile</span>
+                            <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /> </svg>
+                          </div>
+                          <ul className="dropdown-menu absolute hidden text-white pt-1">
+                            <li className="">
+                              <a className="rounded-t bg-indigo-600 hover:text-gray-700 py-2 px-4 block whitespace-no-wrap" href="/">
+                                Profile
+                              </a>
+                            </li>
+                            <li className="">
+                              <a className="bg-indigo-600 hover:text-gray-700 py-2 px-4 block whitespace-no-wrap" href="/">
+                                Payment
+                              </a>
+                            </li>
 
-                    <li className="">
-                      <a className="rounded-b bg-indigo-600 hover:text-gray-700 py-2 px-4 block whitespace-no-wrap" href="/login"><div className="bg-white p-px mb-3" />
-                        Logout
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+                            <li className="">
+                              <a className="rounded-b bg-indigo-600 hover:text-gray-700 py-2 px-4 block whitespace-no-wrap" href="/login"><div className="bg-white p-px mb-3" />
+                                Logout
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    )
+                }
 
               </div>
             </div>

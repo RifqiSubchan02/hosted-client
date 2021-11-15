@@ -10,6 +10,7 @@ const FormRegister = () => {
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
+  const [pinAccPayt, setPinAccPayt] = useState("")
   const [role, setRole] = useState("User");
   const [hostName, setHostName] = useState("");
 
@@ -23,6 +24,7 @@ const FormRegister = () => {
       password,
       phone,
       addressDetail: address,
+      pinAccPayt,
       role,
       hostName
     }
@@ -113,7 +115,7 @@ const FormRegister = () => {
                 <input
                   id="phone"
                   name="phone"
-                  type="text"
+                  type="tel"
                   value={phone}
                   onChange={e => setPhone(e.target.value)}
                   required
@@ -133,6 +135,23 @@ const FormRegister = () => {
                   onChange={e => setAddress(e.target.value)}
                   required
                   className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                />
+              </div>
+              <Gap height={20} />
+              <div>
+                <label htmlFor="pin-number" className="font-semibold">
+                  HostedPay Pin
+                </label>
+                <input
+                  id="pin-number"
+                  name="pin-number"
+                  type="password"
+                  maxLength="6"
+                  value={pinAccPayt}
+                  onChange={e => setPinAccPayt(e.target.value)}
+                  required
+                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  placeholder="e.g 123xxx"
                 />
               </div>
               <Gap height={20} />

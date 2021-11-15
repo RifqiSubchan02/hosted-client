@@ -8,10 +8,10 @@ const Home = () => {
   return (
     <>
       {
-        roleType === "User" ?
-          <HomeUser /> :
+        roleType === "Admin" ?
+          <HomeAdmin /> :
           roleType === "Hosted" ?
-            <HomeHosted /> : <HomeAdmin />
+            <HomeHosted /> : <HomeUser />
       }
     </>
   );
